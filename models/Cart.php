@@ -9,6 +9,7 @@ use Model;
 use October\Rain\Database\Traits\SoftDelete;
 use October\Rain\Database\Traits\Validation;
 use OFFLINE\Mall\Classes\Totals\TotalsCalculator;
+use OFFLINE\Mall\Classes\Totals\TotalsCalculatorInput;
 use OFFLINE\Mall\Classes\Traits\Cart\CartActions;
 use OFFLINE\Mall\Classes\Traits\Cart\CartSession;
 use OFFLINE\Mall\Classes\Traits\Cart\Discounts;
@@ -38,6 +39,9 @@ class Cart extends Model
         'shipping_address' => [Address::class, 'localKey' => 'shipping_address_id', 'deleted' => true],
         'billing_address'  => [Address::class, 'localKey' => 'billing_address_id', 'deleted' => true],
         'customer'         => [Customer::class, 'deleted' => true],
+    ];
+    public $hasOne = [
+        'wishlist' => Wishlist::class,
     ];
     public $belongsToMany = [
         'discounts' => [
@@ -106,7 +110,7 @@ class Cart extends Model
             return $this->totalsCached;
         }
 
-        return $this->totalsCached = new TotalsCalculator($this);
+        return $this->totals();
     }
 
     public function getShippingAddressSameAsBillingAttribute(): bool
@@ -116,7 +120,7 @@ class Cart extends Model
 
     public function totals(): TotalsCalculator
     {
-        return $this->totalsCached = new TotalsCalculator($this);
+        return $this->totalsCached = new TotalsCalculator(TotalsCalculatorInput::fromCart($this));
     }
 
     /**
@@ -222,5 +226,27 @@ class Cart extends Model
                     $cart->forceDelete();
                 });
             });
+    }
+
+    /**
+     * Enforce a fixed shipping price for this cart.
+     *
+     * The provided price will override the default price for the
+     * current shipping method.
+     * You can pass an optional name override as second parameter.
+     * This is useful if you need a dynamic way to set shipping costs
+     * based on an arbitrary other value.
+     *
+     * @example $cart->forceShippingPrice(['EUR' => 200], 'Fee Zone 2');
+     *
+     * @param array  $price
+     * @param string $name
+     */
+    public function forceShippingPrice(array $price, string $name = '')
+    {
+        Session::put('mall.shipping.enforced.price', $price);
+        if ($name) {
+            Session::put('mall.shipping.enforced.name', $name);
+        }
     }
 }

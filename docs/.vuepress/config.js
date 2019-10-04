@@ -21,6 +21,8 @@ module.exports = {
                     '/digging-deeper/properties',
                     '/digging-deeper/categories',
                     '/digging-deeper/products',
+                    '/digging-deeper/reviews',
+                    '/digging-deeper/services',
                     '/digging-deeper/currencies',
                     '/digging-deeper/shipping-methods',
                     '/digging-deeper/payments',
@@ -36,10 +38,13 @@ module.exports = {
                     '/components/product',
                     '/components/products',
                     '/components/products-filter',
+                    '/components/product-reviews',
                     '/components/cart',
                     '/components/discount-applier',
                     '/components/checkout',
                     '/components/signup',
+                    '/components/wishlists',
+                    '/components/wishlist-button',
                     '/components/payment-method-selector',
                     '/components/shipping-method-selector',
                     '/components/address-selector',
@@ -57,11 +62,19 @@ module.exports = {
                     '/development/product-model',
                     '/development/variant-model',
                     '/development/order-model',
+                    '/development/cart-model',
                     '/development/payment-providers',
                     '/development/pricing-information',
                     '/development/events',
                     '/development/integration',
                     '/development/console-commands',
+                ]
+            },
+            {
+                title: 'Changelog',
+                children: [
+                    '/changelog/1.6.0',
+                    '/changelog/1.5.0',
                 ]
             }
         ],

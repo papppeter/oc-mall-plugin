@@ -70,6 +70,7 @@ abstract class SortOrder
         $options = [
             'manual'     => new Manual(),
             'bestseller' => new Bestseller(),
+            'ratings'    => new Rating(),
             'latest'     => new Latest(),
             'price_low'  => new PriceLow(),
             'price_high' => new PriceHigh(),
@@ -99,6 +100,7 @@ abstract class SortOrder
     {
         $options = [
             'bestseller' => (new Bestseller())->label(),
+            'ratings'    => (new Rating())->label(),
             'manual'     => (new Manual())->label(),
             'latest'     => (new Latest())->label(),
             'price_low'  => (new PriceLow())->label(),

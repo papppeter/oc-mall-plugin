@@ -41,7 +41,7 @@ class Product extends Model
     const MORPH_KEY = 'mall.product';
 
     protected $dates = ['deleted_at'];
-    public $jsonable = ['links', 'additional_descriptions', 'additional_properties'];
+    public $jsonable = ['links', 'additional_descriptions', 'additional_properties', 'embeds'];
     public $nullable = ['group_by_property_id'];
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
     public $translatable = [
@@ -51,8 +51,11 @@ class Product extends Model
         'description',
         'meta_title',
         'meta_description',
+        'meta_keywords',
+        'links',
         'additional_descriptions',
         'additional_properties',
+        'embeds',
     ];
     public $slugs = [
         'slug' => 'name',
@@ -128,11 +131,13 @@ class Product extends Model
         'additional_prices'     => [Price::class, 'name' => 'priceable'],
     ];
     public $hasMany = [
-        'prices'          => [ProductPrice::class, 'conditions' => 'variant_id is null'],
-        'variants'        => Variant::class,
-        'cart_products'   => CartProduct::class,
-        'image_sets'      => ImageSet::class,
-        'property_values' => PropertyValue::class,
+        'prices'                 => [ProductPrice::class, 'conditions' => 'variant_id is null'],
+        'variants'               => Variant::class,
+        'cart_products'          => CartProduct::class,
+        'image_sets'             => ImageSet::class,
+        'property_values'        => PropertyValue::class,
+        'reviews'                => Review::class,
+        'category_review_totals' => [CategoryReviewTotal::class, 'conditions' => 'variant_id is null'],
     ];
     public $belongsToMany = [
         'categories'      => [
@@ -176,6 +181,13 @@ class Product extends Model
             'deleted'    => true,
             'pivot'      => ['id', 'quantity', 'price'],
             'pivotModel' => CartProduct::class,
+        ],
+        'services'        => [
+            Service::class,
+            'table'    => 'offline_mall_product_service',
+            'key'      => 'product_id',
+            'otherKey' => 'service_id',
+            'pivot'    => ['required'],
         ],
     ];
 
@@ -292,6 +304,11 @@ class Product extends Model
     public function getProductHashIdAttribute()
     {
         return $this->getHashIdAttribute();
+    }
+
+    public function getProductIdAttribute()
+    {
+        return $this->id;
     }
 
     /**

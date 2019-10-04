@@ -44,6 +44,8 @@ class Variant extends Model
     public $implement = ['@RainLab.Translate.Behaviors.TranslatableModel'];
     public $translatable = [
         'name',
+        'description_short',
+        'description',
     ];
     public $casts = [
         'published'                    => 'boolean',
@@ -73,6 +75,8 @@ class Variant extends Model
     public $hasMany = [
         'prices'                  => ProductPrice::class,
         'property_values'         => [PropertyValue::class, 'key' => 'variant_id', 'otherKey' => 'id'],
+        'reviews'                 => [Review::class],
+        'category_review_totals' => [CategoryReviewTotal::class, 'conditions' => 'product_id is null'],
         'product_property_values' => [
             PropertyValue::class,
             'key'      => 'product_id',
@@ -262,16 +266,9 @@ class Variant extends Model
         }
     }
 
-    /**
-     * To easily generate the correct URL to a Product/Variant
-     * we blindly call item.variantId. In this case we return
-     * the Variant's hashed ID. If the property is called on a
-     * Product model null is returned.
-     * @return string
-     */
     public function getVariantIdAttribute()
     {
-        return $this->hashId;
+        return $this->id;
     }
 
     public function getVariantHashIdAttribute()

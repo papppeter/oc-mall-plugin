@@ -218,6 +218,26 @@ tabs:
                         span: right
                         type: text
                         required: true
+        embeds:
+            label: 'offline.mall::lang.product.embeds'
+            prompt: 'offline.mall::lang.common.add_value'
+            span: right
+            type: repeater
+            tab: 'offline.mall::lang.common.attachments'
+            form:
+                fields:
+                    title:
+                        label: 'offline.mall::lang.product.embed_title'
+                        span: full
+                        required: true
+                        type: text
+                    code:
+                        label: 'offline.mall::lang.product.embed_code'
+                        span: full
+                        required: true
+                        type: codeeditor
+                        size: small
+                        language: html
         weight:
             label: 'offline.mall::lang.product.weight'
             oc.commentPosition: ''
@@ -236,6 +256,13 @@ tabs:
             span: right
             type: partial
             path: custom_fields
+            tab: 'offline.mall::lang.common.cart'
+        services:
+            label: 'offline.mall::lang.common.services'
+            oc.commentPosition: ''
+            span: right
+            type: partial
+            path: services
             tab: 'offline.mall::lang.common.cart'
         quantity_default:
             label: 'offline.mall::lang.product.quantity_default'
@@ -280,3 +307,8 @@ tabs:
             span: left
             type: textarea
             tab: 'offline.mall::lang.common.seo'
+        reviews:
+            span: full
+            type: partial
+            path: reviews
+            tab: 'offline.mall::lang.common.reviews'
