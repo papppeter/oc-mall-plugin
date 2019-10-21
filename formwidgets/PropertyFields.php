@@ -160,6 +160,7 @@ class PropertyFields extends FormWidgetBase
 
         $widget             = new DatePicker($this->controller, $formField, $config);
         $widget->allowEmpty = true;
+        $widget->ignoreTimezone = true;
         $widget->bindToController();
 
         return $this->makePartial(
@@ -179,6 +180,7 @@ class PropertyFields extends FormWidgetBase
 
         $widget             = new DatePicker($this->controller, $formField, $config);
         $widget->allowEmpty = true;
+        $widget->ignoreTimezone = true;
         $widget->mode = 'date';
         $widget->bindToController();
 
