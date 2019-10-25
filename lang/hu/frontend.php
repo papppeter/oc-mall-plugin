@@ -64,7 +64,7 @@ return [
     'payment_method.choose'                    => 'Kérlek válassz fizetési módot.',
     'payment_method.button_label'              => 'Kiválaszt',
     'payment_method.proceed'                   => 'Fizetésmód mentése',
-    'payment_method.pay_now'                   => 'Fizess most',
+    'payment_method.pay_now'                   => 'Tovább',
     'payment_method.card_info'                 => 'Kártya információ',
     'shipping_method'                          => 'Szállítási mód',
     'shipping_method.choose'                   => 'Válassz szállítási módot.',

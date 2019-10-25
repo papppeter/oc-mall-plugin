@@ -513,10 +513,10 @@
             'update' => 'Update information',
         ],
         'payment_states'                      => [
-            'pending_state'  => 'Payment pending',
-            'failed_state'   => 'Payment failed',
-            'refunded_state' => 'Payment refunded',
-            'paid_state'     => 'Paid',
+            'pending_state'  => 'Utalásra vár',
+            'failed_state'   => 'Sikertelen fizetés',
+            'refunded_state' => 'Visszautalva',
+            'paid_state'     => 'Fizetve',
         ],
     ],
     'shipping_method'          => [
