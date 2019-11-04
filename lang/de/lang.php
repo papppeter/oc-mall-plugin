@@ -814,6 +814,9 @@
                 'showDiscountApplier' => [
                     'title' => 'Rabatt-Code-Feld anzeigen',
                 ],
+                'showShipping' => [
+                    'title' => 'Versandkosten anzeigen',
+                ],
                 'showTaxes'           => [
                     'title' => 'Steuern ausweisen',
                 ],

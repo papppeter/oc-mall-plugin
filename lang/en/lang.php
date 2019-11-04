@@ -816,6 +816,9 @@
                 'showDiscountApplier' => [
                     'title' => 'Show discount applier',
                 ],
+                'showShipping' => [
+                    'title' => 'Show shipping cost',
+                ],
                 'showTaxes'           => [
                     'title' => 'Show taxes',
                 ],
