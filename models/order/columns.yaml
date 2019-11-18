@@ -49,3 +49,9 @@ columns:
         path: $/offline/mall/models/order/_shipped.htm
         sortable: true
         searchable: false
+    products:
+        label: 'offline.mall::lang.order.items'
+        type: partial
+        path: $/offline/mall/models/order/_items.htm
+        sortable: false
+        searchable: false
