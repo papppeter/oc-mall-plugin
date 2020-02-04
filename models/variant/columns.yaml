@@ -17,7 +17,7 @@ columns:
         type: partial
         path: $/offline/mall/models/variant/_description.htm
         label: 'offline.mall::lang.common.properties'
-        searchable: true
+        searchable: false
         sortable: false
     stock:
         label: 'offline.mall::lang.product.stock'
