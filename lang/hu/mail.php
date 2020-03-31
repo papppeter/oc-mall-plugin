@@ -76,6 +76,8 @@
             'subject' => 'A fizetés nem sikerült #:number',
             'not_processed' => 'A következő rendelést nem sikerült megfelelően feldolgozni. Lehetséges, hogy kapcsolatba kell lépnünk az ügyféllel.',
             'error_details' => 'Hiba részletei',
+            'payment_id' => 'Fizetési azonosító',
+            'error' => 'Hibaüzenet',
         ],
     ],
 ];
