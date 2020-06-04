@@ -554,7 +554,8 @@
         'shipping_provider' => 'Shipping provider',
         'shipping_method' => 'Shipping method',
         'card_holder_name' => 'Card holder',
-        'card_type' => 'Cart type',
+        'card_type' => 'Card type',
+        'telephone' => 'Telephone',
         'payment_method' => 'Payment method',
         'payment_gateway_used' => 'Payment gateway',
         'tax_provider' => 'Tax provider',
@@ -1126,6 +1127,8 @@
         'anonymous' => 'Anonymous',
         'only_unapproved' => 'Show only unapproved',
         'no_more' => 'No more unapproved reviews',
+        'approved' => 'Review approved',
+        'approve' => 'Approve review',
         'approve_next' => 'Approve and go to next',
     ],
 ];
