@@ -1,4 +1,5 @@
-<?php return [
+<?php
+return [
     'plugin' => [
         'name' => 'Mall',
         'description' => 'E-commerce solution for October CMS',
@@ -347,11 +348,14 @@
         'checkbox' => 'Checkbox',
         'color' => 'Color',
         'image' => 'Image',
+        'switch' => 'Switch',
         'add' => 'Add option',
         'name' => 'Name',
         'price' => 'Price',
         'attributes' => 'Attribute',
         'option' => 'Option',
+        'date' => 'Date',
+        'datetime' => 'Date Time',
     ],
     'product' => [
         'user_defined_id' => 'Product ID',
@@ -370,10 +374,10 @@
         'price' => 'Price',
         'description_short' => 'Short description',
         'description' => 'Description',
-        'weight' => 'Weight (g)',
-        'length' => 'Length (mm)',
-        'height' => 'Height (mm)',
-        'width' => 'Width (mm)',
+        'weight' => 'Weight',
+        'length' => 'Length',
+        'height' => 'Height',
+        'width' => 'Width',
         'quantity_default' => 'Default quantity',
         'quantity_min' => 'Minimum quantity',
         'quantity_max' => 'Maximum quantity',
@@ -458,6 +462,8 @@
         'inherit_property_groups_comment' => 'Use the property groups of this category\'s parent category',
         'inherit_review_categories' => 'Inherit review categories of parent category',
         'inherit_review_categories_comment' => 'Use the review categories of this category\'s parent category',
+        'google_product_category_id' => 'Google Product Category ID',
+        'google_product_category_id_comment' => 'Used for Google Merchant integration, see https://support.google.com/merchants/answer/6324436',
     ],
     'custom_fields' => [
         'name' => 'Field name',
@@ -502,6 +508,7 @@
             'total' => 'Order total is reached',
             'code' => 'Discount code is entered',
             'product' => 'A specific product is present in the cart',
+            'customer_group' => 'The user belongs to a specific customer group',
         ],
         'validation' => [
             'empty' => 'Enter a promo code.',
