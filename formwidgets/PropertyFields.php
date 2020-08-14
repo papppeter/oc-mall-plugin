@@ -5,7 +5,6 @@ use Backend\Classes\FormWidgetBase;
 use Backend\FormWidgets\ColorPicker;
 use Backend\FormWidgets\DatePicker;
 use Backend\FormWidgets\FileUpload;
-use Backend\FormWidgets\DatePicker;
 use OFFLINE\Mall\Models\Property;
 use OFFLINE\Mall\Models\PropertyGroup;
 use OFFLINE\Mall\Models\PropertyValue;
