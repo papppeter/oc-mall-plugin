@@ -163,6 +163,8 @@
         'use_state_comment' => 'Kunden müssen bei der Registrierung ein Kanton/Bundesstaat auswählen',
         'group_search_results_by_product' => 'Suchresultate nach Produkt gruppieren',
         'group_search_results_by_product_comment' => 'Zeige in den Suchresultaten nur das Hauptprodukt an, nicht alle passenden Varianten',
+        'shipping_selection_before_payment' => 'Versand- vor Zahlungsmethode auswählen',
+        'shipping_selection_before_payment_comment' => 'Standardmässig wird die Zahlungsmethode vor der Versandmethode ausgewählt. Wird diese Option aktiviert, ist die Reihenfolge umgekehrt.',
         'admin_email' => 'E-Mail des Admins',
         'admin_email_comment' => 'Benachrichtigungen werden an diese E-Mail versendet',
         'base' => 'Allgemein',
@@ -653,6 +655,7 @@
         'manage_wishlists' => 'Kann Merklisten verwalten',
         'manage_services' => 'Kann Services verwalten',
         'manage_reviews' => 'Kann Reviews verwalten',
+        'manage_brands' => 'Kann Marken verwalten',
     ],
     'components' => [
         'products' => [
@@ -860,6 +863,15 @@
             ],
             'errors' => [
                 'missing_settings' => 'Bitte wählen Sie eine Zahlungs- und Versandmethode aus.',
+            ],
+        ],
+        'quickCheckout'                   => [
+            'details' => [
+                'name'        => 'Schneller Checkout',
+                'description' => 'Checkout auf einer Seite',
+            ],
+            'errors'  => [
+                'signup_failed' => 'Fehler beim Erstellen Ihres Benutzerkontos.',
             ],
         ],
         'discountApplier' => [

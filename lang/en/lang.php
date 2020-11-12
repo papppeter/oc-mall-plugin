@@ -164,6 +164,8 @@ return [
         'use_state_comment' => 'Customers have to select a State/County/Province during signup',
         'group_search_results_by_product' => 'Group search results by product',
         'group_search_results_by_product_comment' => 'Include a Product only once in the search results, don\'t display all matching Variants',
+        'shipping_selection_before_payment' => 'Select shipping method BEFORE payment during checkout',
+        'shipping_selection_before_payment_comment' => 'By default, during checkout, the user is first asked to select a payment method before selecting a shipping method; use this option to reverse this logic',
         'admin_email' => 'Admin email',
         'admin_email_comment' => 'Admin notifications will be sent to this addres',
         'base' => 'Base settings',
@@ -660,6 +662,7 @@ return [
         'manage_wishlists' => 'Can manage wishlists',
         'manage_services' => 'Can manage services',
         'manage_reviews' => 'Can manage reviews',
+        'manage_brands' => 'Can manage brands',
     ],
     'components' => [
         'products' => [
@@ -868,6 +871,15 @@ return [
             ],
             'errors' => [
                 'missing_settings' => 'Please select a payment and shipping method.',
+            ],
+        ],
+        'quickCheckout'              => [
+            'details' => [
+                'name'        => 'Quick Checkout',
+                'description' => 'Single-page checkout process',
+            ],
+            'errors'  => [
+                'signup_failed' => 'Failed to create user account.',
             ],
         ],
         'discountApplier' => [

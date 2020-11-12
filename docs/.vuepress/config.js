@@ -43,6 +43,7 @@ module.exports = {
                     '/components/cart',
                     '/components/discount-applier',
                     '/components/checkout',
+                    '/components/quick-checkout',
                     '/components/signup',
                     '/components/wishlists',
                     '/components/wishlist-button',
@@ -76,6 +77,7 @@ module.exports = {
             {
                 title: 'Changelog',
                 children: [
+                    '/changelog/1.12.0',
                     '/changelog/1.11.0',
                     '/changelog/1.10.0',
                     '/changelog/1.9.0',
