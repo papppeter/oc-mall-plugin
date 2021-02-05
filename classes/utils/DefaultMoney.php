@@ -5,6 +5,8 @@ namespace OFFLINE\Mall\Classes\Utils;
 use Illuminate\Support\Facades\App;
 use OFFLINE\Mall\Models\Currency;
 use October\Rain\Parse\Twig;
+use Twig\Environment;
+use Twig\Loader\ArrayLoader;
 
 class DefaultMoney implements Money
 {
@@ -18,7 +20,7 @@ class DefaultMoney implements Money
         $this->twig = App::make('mall.twig.environment');
     }
 
-    public function format(?int $value, $product = null, ?Currency $currency = null): string
+    public function format(?float $value, $product = null, ?Currency $currency = null): string
     {
         $currency = $currency ?? Currency::activeCurrency();
 
@@ -42,8 +44,8 @@ class DefaultMoney implements Money
 
     protected function render($contents, array $vars)
     {
-        return number_format($vars['price'],$vars['currency']->decimals,  ',', ' ').' '.$vars['currency']->symbol;
+        $twig = new Environment(new ArrayLoader(['content' => $contents]));
 
-        return (new Twig)->parse($contents, $vars);
+        return $twig->render('content', $vars);
     }
 }
